@@ -2,7 +2,7 @@ header:
   version: 18
 
 machine: raspberrypi3
-target: powa-image
+target: powa-dev-image
 distro: powa
 
 repos:
