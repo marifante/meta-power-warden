@@ -1,7 +1,17 @@
 # Power Warden yocto layer
 
-This yocto layer provides recipes for the Power Warden project.
-A linux image with power warden application and its dependencies can be built with this layer.
+<div style="display: flex; justify-content: space-between; align-items: center;">
+  <div style="width: 70%;">
+ This yocto layer provides recipes to create a Linux image for embedded targets with Power Warden application already installed.
+
+You can find here also some kas configuration examples to build this custom image for the supported platforms.
+
+  </div>
+  <div style="width: 30%; text-align: right;">
+    <!-- Right-aligned image -->
+    <img src="img/powa_char.png" alt="Power Warden Character" width="300">
+  </div>
+</div>
 
 ## Supported platforms
 
@@ -39,7 +49,6 @@ The custom recipes provided in this layer are:
 ### Recipes in progress
 
 1. `recipes-core/psplash/psplash_git.bbapend`: customize psplash to show Powa logo on boot.
-2.
 
 ## How to build (example for raspberry pi 3)
 
