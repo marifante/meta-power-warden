@@ -56,3 +56,8 @@ bunzip2 < "powa-image-raspberrypi3.rootfs.wic.bz2" > "powa-image-raspberrypi3.ro
 ```bash
 bmaptool copy powa-image-raspberrypi3.rootfs.wic /dev/<your_media>
 ```
+
+## Testing in QEMU
+
+You can also test the image in QEMU. To do that, you can use as an example the kas configuration file `kas/powa-dev-qemu.yml`.
+After building the image with `kas build kas/powa-dev-qemu.yml`, you can run the image in QEMU with the following command: `runqemu qemuarm nographic`.
