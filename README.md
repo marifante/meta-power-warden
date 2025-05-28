@@ -1,17 +1,8 @@
-# Power Warden yocto layer
+# Power Warden Yocto layer
 
-<div style="display: flex; justify-content: space-between; align-items: center;">
-  <div style="width: 70%;">
- This yocto layer provides recipes to create a Linux image for embedded targets with Power Warden application already installed.
+This yocto layer provides recipes to create a Linux image for embedded targets with Power Warden application already installed.
 
 You can find here also some kas configuration examples to build this custom image for the supported platforms.
-
-  </div>
-  <div style="width: 30%; text-align: right;">
-    <!-- Right-aligned image -->
-    <img src="img/powa_char.png" alt="Power Warden Character" width="300">
-  </div>
-</div>
 
 ## Supported platforms
 
@@ -70,3 +61,7 @@ bmaptool copy powa-image-raspberrypi3.rootfs.wic /dev/<your_media>
 
 You can also test the image in QEMU. To do that, you can use as an example the kas configuration file `kas/powa-dev-qemu.yml`.
 After building the image with `kas build kas/powa-dev-qemu.yml`, you can run the image in QEMU with the following command: `runqemu qemuarm nographic`.
+
+   <div align="center">
+     <img src="img/powa_char.png" alt="Power Warden Character" width="300">
+   </div>
