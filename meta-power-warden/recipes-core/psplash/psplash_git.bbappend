@@ -7,7 +7,15 @@
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
 
-# psplash base recipe will call make-image-header.sh from psplash to create a .h header file from the png image.
-SPLASH_IMAGES = "file://powa_image_psplash.png;outsuffix=default"
+# psplash base recipe will convert this .png image to a .h header file.
+SPLASH_IMAGES:powa = "file://psplash-powa-img.png;outsuffix=power-warden"
 
 # psplash base recipe will create a system.d service called `psplash-systemd.service`: https://github.com/yoctoproject/poky/blob/d8b0adfaac9118777d099f76c428e088da519ff0/meta/recipes-core/psplash/files/psplash-systemd.service.
+# That service will be located in /usr/lib/systemd/system/psplash-systemd.service.
+# Seems like there is an issue with psplash base recipe in which it removes splash executable from bindir: https://github.com/yoctoproject/poky/blob/fd9b605507a20d850a9991316cd190c1d20dc4a6/meta/recipes-core/psplash/psplash_git.bb#L126.
+# Also see: https://github.com/agherzan/meta-raspberrypi/issues/1330
+# Here we are fixing that issue
+do_install:append:powa() {
+    bbnote "Powa: Installing psplash from ${B}/psplash to ${D}${bindir}/psplash"
+    install -m 0755 ${B}/psplash ${D}${bindir}/psplash
+}

@@ -4,4 +4,4 @@ SUMMARY = "Linux image that provides Power Warden application ready to be used i
 # https://github.com/yoctoproject/poky/blob/walnascar/meta/classes-recipe/core-image.bbclass
 inherit core-image
 
-IMAGE_FEATURES += "ssh-server-openssh"
+IMAGE_FEATURES += "ssh-server-openssh splash"
