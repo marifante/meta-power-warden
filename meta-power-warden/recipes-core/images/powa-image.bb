@@ -5,3 +5,5 @@ SUMMARY = "Linux image that provides Power Warden application ready to be used i
 inherit core-image
 
 IMAGE_FEATURES += "ssh-server-openssh splash"
+
+IMAGE_INSTALL:append = " docker docker-compose"

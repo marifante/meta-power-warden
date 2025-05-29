@@ -1,37 +1,11 @@
 header:
   version: 18
+  includes:
+    - powa-base-layers.yml
 
 machine: "qemuarm"
 target: powa-dev-image
 distro: powa
-
-repos:
-  meta-power-warden:
-    path: "../meta-power-warden"
-
-  # meta-raspberry walnascar branch's commit: https://git.yoctoproject.org/meta-raspberrypi/commit/?h=walnascar&id=1059a239ca756d97e99f0ef7d5a0debc5200db7a
-  meta-raspberry:
-    url: "https://github.com/agherzan/meta-raspberrypi.git"
-    commit: "1059a239ca756d97e99f0ef7d5a0debc5200db7a"
-
-  # Poky's walnascar branch's commit: https://git.yoctoproject.org/poky/commit/?h=walnascar&id=fd9b605507a20d850a9991316cd190c1d20dc4a6
-  poky:
-    url: "https://git.yoctoproject.org/git/poky"
-    commit: "fd9b605507a20d850a9991316cd190c1d20dc4a6"
-    layers:
-      meta:
-      meta-yocto-bsp:
-
-  # meta-openembedded walnascar branch's commit: https://git.openembedded.org/meta-openembedded/commit/?h=walnascar&id=2169c9afcc0945045bea49f58011080942d4ddb4
-  meta-openembedded:
-    url: https://github.com/openembedded/meta-openembedded.git
-    commit: "2169c9afcc0945045bea49f58011080942d4ddb4"
-    path: layers/meta-openembedded
-    layers:
-      meta-oe:
-      meta-python:
-      meta-networking:
-      meta-perl:
 
 # linux-firmware-rpidistro-bcm43455 needs synaptics-killswitch license to be accepted.
 # TODO: rm_work_and_downloads should be moved to a more common place
